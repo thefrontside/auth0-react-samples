@@ -1,0 +1,23 @@
+{
+  "name": "@frontside/auth0-react-samples",
+  "version": "0.1.0",
+  "description": "[![CircleCI](https://circleci.com/gh/auth0-samples/auth0-react-samples.svg?style=svg)](https://circleci.com/gh/auth0-samples/auth0-react-samples)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thefrontside/auth0-react-samples.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thefrontside/auth0-react-samples/issues"
+  },
+  "homepage": "https://github.com/thefrontside/auth0-react-samples#readme",
+  "volta": {
+    "node": "14.17.0",
+    "npm": "7.13.0"
+  }
+}

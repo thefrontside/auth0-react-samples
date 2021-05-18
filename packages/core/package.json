@@ -1,0 +1,22 @@
+{
+  "name": "core",
+  "version": "0.0.0-monorepo",
+  "repository": {
+    "type": "git",
+    "directory": "packages/simulation-cli"
+  },
+  "scripts": {
+    "problems": "tsc --noEmit"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@effection/node": "=2.0.0-preview.12",
+    "assert-ts": "^0.3.2",
+    "chalk": "^4.1.0",
+    "cors": "^2.8.5",
+    "effection": "=2.0.0-preview.12",
+    "express": "^4.17.1",
+    "get-port": "^5.1.1",
+    "node-fetch": "^2.6.1"
+  }
+}

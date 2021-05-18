@@ -1,0 +1,29 @@
+{
+  "name": "@frontside/auth0-simulator",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "directory": "packages/auth0-simulator"
+  },
+  "scripts": {
+    "problems": "tsc --noEmit"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@effection/node": "=2.0.0-preview.12",
+    "assert-ts": "^0.3.2",
+    "base64-url": "^2.3.3",
+    "cookie-session": "^1.4.0",
+    "cors": "^2.8.5",
+    "effection": "=2.0.0-preview.12",
+    "express": "^4.17.1",
+    "html-entities": "^2.1.1",
+    "jsesc": "^3.0.2",
+    "jsonwebtoken": "^8.5.1",
+    "querystring": "^0.2.1",
+    "url-join": "^4.0.1"
+  },
+  "devDependencies": {
+    "@frontside/tsconfig": "^1.2.0"
+  }
+}

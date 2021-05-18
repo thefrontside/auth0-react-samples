@@ -1,0 +1,36 @@
+export type Auth0QueryParams = {
+  state: string;
+  code: string;
+  redirect_uri: string;
+  code_challenge: string;
+  scope: string;
+  client_id: string;
+  nonce: string;
+  simulationId: string;
+  code_challenge_method: string;
+  response_type: string;
+  response_mode: "query" | "web_message" | "fragment";
+  auth0Client: string;
+};
+
+export type OauthTokenBody = {
+  client_id: string;
+  code_verifier: string;
+  code: string;
+  grant_type: string;
+  redirect_uri: string;
+};
+
+export interface Auth0SimulatorOptions {
+  url: string;
+  oauth: {
+    clientID?: string;
+    scope: string;
+    audience: string;
+  };
+}
+
+export type Auth0Config = {
+  url: string;
+  audience: string;
+} & Auth0QueryParams;
