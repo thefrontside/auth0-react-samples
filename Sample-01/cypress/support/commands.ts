@@ -1,9 +1,5 @@
 import configJson from "../../src/auth_config.json";
 
-console.log(configJson)
-
-console.log(configJson)
-
 Cypress.Commands.add('login', (overrides = {}) => {
   Cypress.log({
     name: 'loginViaAuth0',
@@ -22,6 +18,5 @@ Cypress.Commands.add('login', (overrides = {}) => {
       client_secret: "xxxxx",
     },
   };
-  console.log(options);
   cy.request(options);
 });
