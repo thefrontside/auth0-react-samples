@@ -1,10 +1,10 @@
 describe('login', () => {
-  it.skip('works', () => {
+  it('login', () => {
     cy.visit('/')
 
     cy.get('#qsLoginBtn').first().click();
 
-    cy.get('#email-address')
+    cy.get('#username')
     .type('bob@gmail.com')
     .should('have.value', 'bob@gmail.com');
 
@@ -15,7 +15,7 @@ describe('login', () => {
     cy.get('#submit').click();
   })
   
-  it('should successfully log into our app',  () => {
+  it.skip('should access restricted route',  () => {
     cy.login({currentUser: 'bob@gmail.com'});
 
     cy.visit('/external-api');
