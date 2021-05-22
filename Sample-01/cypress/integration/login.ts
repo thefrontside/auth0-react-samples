@@ -13,9 +13,11 @@ describe('login', () => {
     .should('have.value', '123$567');
 
     cy.get('#submit').click();
+
+    cy.get('.nav-link').contains('External API')
   })
   
-  it.skip('should access restricted route',  () => {
+  it('should access restricted route',  () => {
     cy.login({currentUser: 'bob@gmail.com'});
 
     cy.visit('/external-api');
