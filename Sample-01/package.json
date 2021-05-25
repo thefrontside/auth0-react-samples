@@ -38,6 +38,7 @@
   },
   "devDependencies": {
     "@frontside/tsconfig": "^1.2.0",
+    "@simulacrum/client": "^0.3.0",
     "@testing-library/jest-dom": "^5.10.1",
     "@testing-library/react": "^10.3.0",
     "cypress": "^7.3.0",
