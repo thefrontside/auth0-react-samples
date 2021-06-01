@@ -20,6 +20,7 @@ export function saveCookie<T>(
   cookieAttributes.expires = options.daysUntilExpire;
   Cookies.set(key, JSON.stringify(value), cookieAttributes);
 }
+
 Cypress.Commands.add('login', async ({currentUser}: {currentUser: string}) => {
   Cypress.log({
     name: 'loginViaAuth0',
@@ -27,5 +28,5 @@ Cypress.Commands.add('login', async ({currentUser}: {currentUser: string}) => {
 
   saveCookie('auth0.is.authenticated', true);
 
-  await auth0Client.getTokenSilently({ ignoreCache: true, currentUser });
+  cy.then(() => auth0Client.getTokenSilently({ ignoreCache: true, currentUser }));
 });

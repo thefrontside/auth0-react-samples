@@ -10,13 +10,16 @@ describe('login', () => {
     
   before(async () => {
     client = createClient('http://localhost:4000');
+  });
+
+  afterEach(() => {
+    client.destroySimulation(simulation);
+  })
+  
+  beforeEach(async () => {
     simulation = await client.createSimulation("auth0");
     let scenario = await client.given(simulation, "person") as Scenario<Person>;
     person = scenario.data;
-  });
-
-  after(() => {
-    // client.destroySimulation(simulation);
   })
 
   it('should fail login', () => {
