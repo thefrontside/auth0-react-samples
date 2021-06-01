@@ -5,10 +5,10 @@ describe('login', () => {
   let client: Client;
   let simulation: Simulation;
   let user: { email: string };
-  
+    
   before(async () => {
-    client = client || createClient('http://localhost:4000');
-    simulation = simulation || await client.createSimulation("auth0");
+    client = createClient('http://localhost:4000');
+    simulation = await client.createSimulation("auth0");
     let scenario = await client.given(simulation, "person") as Scenario<{email: string}>;
     user = scenario.data;
   });

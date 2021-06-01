@@ -41,7 +41,7 @@
     "@simulacrum/client": "^0.3.0",
     "@testing-library/jest-dom": "^5.10.1",
     "@testing-library/react": "^10.3.0",
-    "cypress": "^7.3.0",
+    "cypress": "^7.4.0",
     "es-cookies": "^2.1.18",
     "jest-environment-jsdom-sixteen": "^1.0.3",
     "jest-fetch-mock": "^3.0.3",
