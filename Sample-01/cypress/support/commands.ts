@@ -21,7 +21,7 @@ export function saveCookie<T>(
   Cookies.set(key, JSON.stringify(value), cookieAttributes);
 }
 
-Cypress.Commands.add('login', async ({currentUser}: {currentUser: string}) => {
+Cypress.Commands.add('login', ({currentUser}: {currentUser: string}) => {
   Cypress.log({
     name: 'loginViaAuth0',
   });

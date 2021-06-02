@@ -12,9 +12,9 @@ describe('login', () => {
     client = createClient('http://localhost:4000');
   });
 
-  afterEach(() => {
-    client.destroySimulation(simulation);
-  })
+  // afterEach(() => {
+  //   client.destroySimulation(simulation);
+  // })
   
   beforeEach(async () => {
     simulation = await client.createSimulation("auth0");
