@@ -6,7 +6,6 @@ interface Person { email: string; password: string }
 describe('login', () => {
   let client: Client;
   let simulation: Simulation;
-  let person: Person;
     
   before(async () => {
     client = createClient('http://localhost:4000');
@@ -14,8 +13,6 @@ describe('login', () => {
 
   beforeEach(async () => {
     simulation = await client.createSimulation("auth0");
-    let scenario = await client.given(simulation, "person") as Scenario<Person>;
-    person = scenario.data;
   });
  
   describe('Universal Login', () => {
@@ -35,7 +32,10 @@ describe('login', () => {
       cy.get('.nav-link').should('not.exist');
     })
     
-    it('should login', () => {
+    it('should login', async () => {
+      let { data } = await client.given(simulation, "person") as Scenario<Person>;
+      let person =  data;
+      
       cy.visit('/')
   
       cy.get('#qsLoginBtn').first().click();
@@ -57,9 +57,9 @@ describe('login', () => {
   describe('normal flow', () => {
     it('should get token without signing in and access restricted route',  async () => {
       let { data } = await client.given(simulation, "person") as Scenario<Person>;
-      let person2 =  data;
+      let person =  data;
       
-      cy.login({currentUser: person2.email});
+      cy.login({currentUser: person.email});
   
       cy.visit('/external-api');
   
