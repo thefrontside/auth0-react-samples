@@ -8,7 +8,8 @@ const auth0Client = new Auth0Client({
   connection: 'Username-Password-Authentication',
   domain: configJson.domain,
   scope: 'openid profile email',
-  cacheLocation: 'memory',
+  cacheLocation: 'localstorage',
+  useRefreshTokens: true
 });
 
 export function saveCookie<T>(
@@ -21,12 +22,14 @@ export function saveCookie<T>(
   Cookies.set(key, JSON.stringify(value), cookieAttributes);
 }
 
-Cypress.Commands.add('login', ({currentUser}: {currentUser: string}) => {
+Cypress.Commands.add('login', async ({currentUser}: {currentUser: string}) => {
   Cypress.log({
     name: 'loginViaAuth0',
   });
 
-  saveCookie('auth0.is.authenticated', true);
+  // saveCookie('auth0.is.authenticated', true);
 
-  cy.then(() => auth0Client.getTokenSilently({ ignoreCache: true, currentUser }));
+  // await auth0Client.getTokenSilently({ ignoreCache: true, currentUser });
+  // this loads the tokens into memory
+  await auth0Client.checkSession({ ignoreCache: true, currentUser });
 });
